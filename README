@@ -1,0 +1,54 @@
+DS9 Python Visualization Program Viewing Survey Footprints over SDSS Stripe 82
+
+This footprint visualization program is meant to create images with survey footprint
+overlays on top of a background field. The goal is for these images to be used as needed for
+research purposes (i.e. talks, posters, papers, etc.)
+
+This program requires the python packages astropy and pyds9.  As well as the imagining 
+visualization application SAOImage DS9.  Instructions for how to obtain these are found here:
+
+For astropy,
+
+	http://www.astropy.org/
+
+For pyds9 and the DS9 app,
+
+	http://ds9.si.edu/site/Download.html
+
+****************************************  Important  ****************************************
+For Mac users the Xcode version of DS9 should be installed.
+
+DS9 needs to be added to the environment path variable for pyds9 to properly function.  After 
+dowloading, and unzipping, I recommended moving the two items (ds9 and ds9.zip) to the home 
+directory and placed in a directory titled DS9.  This directory can then be added to the 
+environment path.
+
+Example:
+In my .bash_profile file I have added the lines,
+	# Set path to DS9
+	export PATH=/Users/rstone/DS9:$PATH
+
+*********************************************************************************************
+
+To install:
+
+	# Unpack the source tar file and change to the source directory
+	> tar -zxvf Data_Visualization.tar.gz
+	> cd Data_Visualization
+
+To run:
+
+	# Start up python
+	> python
+        ... (startup messages) ...
+	>>> from visual import *
+	>>> visual()
+
+or
+
+	# From the terminal
+	> python visual.py
+
+Contact rbs55@drexel.edu for help.
+
+Rob Stone
