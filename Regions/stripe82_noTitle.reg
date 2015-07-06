@@ -1,0 +1,8 @@
+# Region file format: DS9 version 4.0
+# Filename: /Users/rstone/Desktop/Research/Data Visualization/stripe82_60_2.fits
+# global font="helvetica 12 bold" select=1 highlite=1 edit=1 move=1 delete=1 include=1 fixed=0 source
+global color=white
+
+icrs
+
+polygon(-60.0,1.25,60.0,1.25,60.0,-1.25,-60.0,-1.25,-60.0,1.25)
