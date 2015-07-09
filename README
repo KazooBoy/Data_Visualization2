@@ -1,8 +1,10 @@
-DS9 Python Visualization Program Viewing Survey Footprints over SDSS Stripe 82
+Python Visualization Program Viewing Survey Footprints over SDSS Stripe 82
 
 This footprint visualization program is meant to create images with survey footprint
 overlays on top of a background field. The goal is for these images to be used as needed for
 research purposes (i.e. talks, posters, papers, etc.)
+
+######################################  Requirements  ######################################
 
 This program requires the python packages astropy and APLpy (Astronomical Plotting Library in
 Python). Information on these packages, and instructions for how to obtain them are found here:
@@ -11,21 +13,31 @@ For astropy,
 
 	http://www.astropy.org/
 
+If using Anaconda Python, astropy is already installed.
+
 For APLpy,
 
 	https://aplpy.github.io/
 
+If using Anaconda Python, APLpy can be obtained using pip,
+
+	> pip install aplpy
+	> pip install pyregion
+	
+
 ****************************************  Important  ****************************************
-This program also requires pyregion be installed.  Instructions for how to install this package
-is included as an optional dependency on the APLpy webpage, but are in fact required for this 
-particular program.
+Though the APLpy webpage lists the pyregion package as an optional dependency, this program 
+makes heavy use of pyregion and requires it be installed.  Instructions for how to install 
+this package is included on the APLpy webpage (if using Anaconda Python, install with pip).
 
 *********************************************************************************************
 
+################################  Installation Instructions  ################################
+
 To install:
 
-	# Clone the repository from GITHUB.  Move to the desired directory where the program and
-	# dependent files will be located.
+	# Clone the repository from GitHub.  Move to the desired directory where the program
+	# and dependent files will be located.
 	> git clone https://github.com/KazooBoy/Data_Visualization2.git
 	> cd Data_Visualization2
 
@@ -42,6 +54,50 @@ or
 	>>> from visual import *
 	>>> visual()
 
-Contact rbs55@drexel.edu for help.
+######################################  Introduction  ######################################
+
+After starting the program, it will first ask where to save any images with the save feature.
+Simply type in the name of an existing directory, or type "D" to use the current working
+directory.
+
+A window will open that contains the dust background image on the righthand side, with 
+several buttons on the lefthand side.
+
+The first button, "Stripe 82 Title", will turn the Stripe 82 title in the image on or off.
+
+The next set of buttons are the six wavelength classes which contain the survey regions to 
+be plotted.  Clicking one of these buttons will open another window containing the individual
+regions.  There are some region buttons that will open one more window, which just asks for
+futher specification on what to plot given the broader survey.  This window will give
+instructions on what to type, then simply press "Enter" to make the region appear in the image.
+Keep in mind that what is entered must be in lowercase.
+
+The "Save Image" button is meant to do just that, save the current image as seen in the 
+plotting window to the right.  It will open a window that contains buttons representing
+different file formats that the image could be saved as.  Clicking one of these will open 
+a window prompting for a name for the image, then just press "Enter".
+
+The "Region Titles" button is a feature request that just toggles the names of each region
+plotted in the image on or off.
+
+Finally, the "Clear All Footprints" button (which also appears in each wavelength class window)
+will clear the entire image of all presently plotted regions, while leaving the status of the 
+Stripe 82 title and region titles as they were.
+
+##########################################  Notes  ##########################################
+
+Certain regions are plotted as a polygon using many many points, while some are plotted as 
+many many polygons with few points, but just as many points in the whole file.  As such, 
+these regions will take some time to load.
+	
+	*VLA
+	*CNSS
+	*Chandra ACIS-I
+	*Chandra ACIS-S
+
+#############################################################################################
+
+Contact rbs55@drexel.edu for help or any features that you wish to be implemented.
 
 Rob Stone
+
