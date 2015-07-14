@@ -44,14 +44,14 @@ To install:
 To run:
 
 	# From the terminal
-	> python visual.py
+	> python S82_Visual.py
 
 or
 	
 	# Start up python
 	> python
         ... (startup messages) ...
-	>>> from visual import *
+	>>> from S82_Visual import *
 	>>> visual()
 
 ######################################  Introduction  ######################################
