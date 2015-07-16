@@ -330,7 +330,7 @@ class UV:
 			image.geometry('+650+300')
 			entry = Entry(image, bd=3)
 			image.bind("<Return>", (lambda event, e=entry: self.survey(e,image)))
-			label = Label(image, text="Please enter 'dis', 'mis', 'ais', or 'all' (separated by commas if multiple) for desired survey(s)")
+			label = Label(image, text="Please enter 'DIS', 'MIS', 'AIS', or 'All' (separated by commas if multiple) for desired survey(s)")
 			label.pack(side=LEFT)
 			entry.pack(side=LEFT)
 			self.im_exist[0] = 1
@@ -348,7 +348,7 @@ class UV:
 		
 	def survey(self, entry, image):
 		surveylist = ['dis','mis','ais']
-		surveys = [x.strip() for x in entry.get().split(',')]
+		surveys = [x.strip().lower() for x in entry.get().split(',')]
 		if len(surveys)>1:
 			if all((y in surveys for y in surveylist)):
 				display_regions(region_titles=set_reg_titles[0], REG='gr67')
@@ -424,7 +424,7 @@ class XRAY:
 			image.geometry('+650+300')
 			entry = Entry(image, bd=3)
 			image.bind("<Return>", (lambda event, e=entry: self.camera(e,image)))
-			label = Label(image, text="Please enter 'acis-s', 'acis-i', 'hrc-s', 'hrc-i', or 'all' (separated by commas if multiple) for desired survey(s)")
+			label = Label(image, text="Please enter 'ACIS-S', 'ACIS-I', 'HRC-S', 'HRC-I', or 'All' (separated by commas if multiple) for desired survey(s)")
 			label.pack(side=LEFT)
 			entry.pack(side=LEFT)
 			self.im_exist[0] = 1
@@ -443,7 +443,7 @@ class XRAY:
 	
 	def camera(self, entry, image):
 		cameralist = ['acis-s','acis-i','hrc-s','hrc-i']
-		cameras = [x.strip() for x in entry.get().split(',')]
+		cameras = [x.strip().lower() for x in entry.get().split(',')]
 		if len(cameras)>1:
 			if all((y in cameras for y in cameralist)):
 				display_regions(region_titles=set_reg_titles[0], REG='chandra_foot')
